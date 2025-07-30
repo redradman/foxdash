@@ -47,12 +47,14 @@
     justify-content: center;
     align-items: center;
     gap: 1rem;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
   }
 
   .search-bar {
     display: flex;
-    width: 100%;
-    max-width: 800px;
+    flex: 1;
     background-color: var(--surface-color);
     border-radius: var(--border-radius);
     box-shadow: var(--box-shadow);
