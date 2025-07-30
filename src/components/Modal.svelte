@@ -1,5 +1,5 @@
 <script>
-  import { createEventDispatcher } from 'svelte';
+  import { createEventDispatcher, onMount, onDestroy } from 'svelte';
 
   let url = '';
   let text = '';
@@ -27,10 +27,24 @@
 
     dispatch('submit', { url: finalUrl, text });
   }
+
+  function handleKeydown(e) {
+    if (e.key === 'Escape') {
+      dispatch('close');
+    }
+  }
+
+  onMount(() => {
+    window.addEventListener('keydown', handleKeydown);
+  });
+
+  onDestroy(() => {
+    window.removeEventListener('keydown', handleKeydown);
+  });
 </script>
 
-<div class="modal-backdrop" on:click={() => dispatch('close')}>
-  <div class="modal-content" on:click|stopPropagation>
+<div class="modal-backdrop">
+  <div class="modal-content">
     <header>
       <slot name="header"></slot>
       <button class="close-btn" on:click={() => dispatch('close')}>×</button>
