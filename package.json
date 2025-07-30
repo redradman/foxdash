@@ -5,8 +5,10 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build && web-ext build --source-dir ./dist --overwrite-dest",
-    "ext:run": "web-ext run --source-dir ./dist --start-url 'about:debugging#/runtime/this-firefox' --pref devtools.webconsole.filter.net=true --pref devtools.webconsole.filter.netxhr=true --pref devtools.webconsole.filter.sdk=true --pref devtools.webconsole.filter.warn=true"
+    "build": "vite build",
+    "web-ext:run": "web-ext run --source-dir=dist",
+    "web-ext:lint": "web-ext lint --source-dir=dist",
+    "web-ext:build": "web-ext build --source-dir=dist"
   },
   "devDependencies": {
     "@sveltejs/vite-plugin-svelte": "^3.0.0",
