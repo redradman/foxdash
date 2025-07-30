@@ -44,8 +44,9 @@
 
 <style>
   .bookmarks-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
+    display: flex;
+    justify-content: center;
+    gap: 4rem;
+    width: 100%;
   }
 </style> 
