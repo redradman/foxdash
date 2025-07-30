@@ -1,5 +1,17 @@
 {
-  "dependencies": {
-    "web-ext": "^8.9.0"
+  "name": "foxdash",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build && web-ext build --source-dir ./dist --overwrite-dest",
+    "ext:run": "web-ext run --source-dir ./dist --start-url 'about:debugging#/runtime/this-firefox' --pref devtools.webconsole.filter.net=true --pref devtools.webconsole.filter.netxhr=true --pref devtools.webconsole.filter.sdk=true --pref devtools.webconsole.filter.warn=true"
+  },
+  "devDependencies": {
+    "@sveltejs/vite-plugin-svelte": "^3.0.0",
+    "svelte": "^4.0.0",
+    "vite": "^5.0.0",
+    "web-ext": "^7.0.0"
   }
 }
