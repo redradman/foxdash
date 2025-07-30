@@ -60,6 +60,12 @@
     font-weight: bold;
     cursor: pointer;
     border-right: 1px solid var(--primary-color);
+    outline: none;
+  }
+
+  select:focus {
+    background-color: var(--primary-color);
+    color: var(--on-primary-color);
   }
 
   input {
@@ -67,6 +73,18 @@
     border: none;
     padding: 0.75rem;
     font-size: 1rem;
+    background-color: var(--surface-color);
+    color: var(--on-surface-color);
+    outline: none;
+    transition: background-color var(--transition-speed);
+  }
+
+  input:focus {
+    background-color: rgba(79, 79, 79, 0.3);
+  }
+
+  input::placeholder {
+    color: rgba(224, 224, 224, 0.6);
   }
 
   button {
