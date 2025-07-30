@@ -48,8 +48,29 @@
     align-items: center;
     gap: 1rem;
     width: 100%;
-    max-width: 1400px;
-    margin: 0 auto;
+    padding: 0 2rem;
+    box-sizing: border-box;
+  }
+
+  @media (min-width: 1400px) {
+    .search-container {
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .search-container {
+      padding: 0 1rem;
+      gap: 0.75rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .search-container {
+      padding: 0 0.5rem;
+      gap: 0.5rem;
+    }
   }
 
   .search-bar {
@@ -120,5 +141,45 @@
   button svg {
     width: 16px;
     height: 16px;
+  }
+
+  @media (max-width: 768px) {
+    input {
+      font-size: 0.9rem;
+      padding: 0.6rem;
+    }
+    
+    select {
+      padding: 0 0.75rem;
+      font-size: 0.9rem;
+    }
+    
+    button {
+      min-width: 36px;
+      height: 36px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    input {
+      font-size: 0.85rem;
+      padding: 0.5rem;
+    }
+    
+    select {
+      padding: 0 0.5rem;
+      font-size: 0.85rem;
+    }
+    
+    button {
+      min-width: 32px;
+      height: 32px;
+      padding: 0.25rem;
+    }
+    
+    button svg {
+      width: 14px;
+      height: 14px;
+    }
   }
 </style> 

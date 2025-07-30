@@ -41,6 +41,10 @@
     flex-direction: column;
     gap: 3rem;
     align-items: center;
+    width: 100%;
+    max-width: 100%;
+    padding: 0;
+    box-sizing: border-box;
   }
   
   .top-left {

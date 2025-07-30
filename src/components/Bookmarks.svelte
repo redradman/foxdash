@@ -48,5 +48,31 @@
     justify-content: center;
     gap: 4rem;
     width: 100%;
+    padding: 0 2rem;
+    box-sizing: border-box;
+    flex-wrap: wrap;
+  }
+
+  @media (max-width: 1200px) {
+    .bookmarks-container {
+      gap: 2rem;
+      padding: 0 1rem;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .bookmarks-container {
+      flex-direction: column;
+      gap: 2rem;
+      align-items: center;
+      padding: 0 1rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .bookmarks-container {
+      gap: 1.5rem;
+      padding: 0 0.5rem;
+    }
   }
 </style> 

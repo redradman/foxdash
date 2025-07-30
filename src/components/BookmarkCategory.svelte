@@ -55,6 +55,22 @@
     flex-direction: column;
     gap: 1rem;
     min-width: 250px;
+    max-width: 300px;
+    width: 100%;
+  }
+
+  @media (max-width: 768px) {
+    .category {
+      min-width: 200px;
+      max-width: 100%;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .category {
+      min-width: auto;
+      max-width: 100%;
+    }
   }
 
   .header {
