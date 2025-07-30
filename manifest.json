@@ -1,21 +1,12 @@
 {
   "manifest_version": 2,
-  "name": "FoxDash - Firefox Startup Page",
-  "version": "1.0.0",
-  "description": "A beautiful startup page for Firefox with search, recent tabs, and custom sections",
-  
-  "permissions": [
-    "tabs",
-    "history",
-    "activeTab"
-  ],
-  
+  "name": "FoxDash",
+  "version": "1.0",
+  "description": "A modern and sleek startpage for Firefox.",
   "chrome_url_overrides": {
     "newtab": "index.html"
   },
-  
-  "background": {
-    "scripts": ["background.js"],
-    "persistent": false
-  }
+  "permissions": [
+    "storage"
+  ]
 } 
