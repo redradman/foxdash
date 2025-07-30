@@ -48,19 +48,15 @@
     align-items: center;
     gap: 1rem;
     width: 100%;
+    max-width: 70%;
+    margin: 0 auto;
     padding: 0 2rem;
     box-sizing: border-box;
   }
 
-  @media (min-width: 1400px) {
-    .search-container {
-      max-width: 1400px;
-      margin: 0 auto;
-    }
-  }
-
   @media (max-width: 768px) {
     .search-container {
+      max-width: 85%;
       padding: 0 1rem;
       gap: 0.75rem;
     }
@@ -68,6 +64,7 @@
 
   @media (max-width: 480px) {
     .search-container {
+      max-width: 95%;
       padding: 0 0.5rem;
       gap: 0.5rem;
     }
