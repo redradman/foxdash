@@ -1,4 +1,6 @@
 <script>
+  import { onMount } from 'svelte';
+  
   let query = '';
   let selectedEngine = 'google';
   const searchEngines = {
@@ -34,6 +36,18 @@
       window.location.href = searchEngines[selectedEngine].url + encodeURIComponent(query);
     }
   }
+
+  function handleEngineChange() {
+    localStorage.setItem('foxdash-search-engine', selectedEngine);
+  }
+
+  onMount(() => {
+    // Load saved search engine preference
+    const savedEngine = localStorage.getItem('foxdash-search-engine');
+    if (savedEngine && searchEngines[savedEngine]) {
+      selectedEngine = savedEngine;
+    }
+  });
 </script>
 
 <div class="search-container">
@@ -46,7 +60,7 @@
           <polyline points="6,9 12,15 18,9"></polyline>
         </svg>
       </div>
-      <select bind:value={selectedEngine}>
+      <select bind:value={selectedEngine} on:change={handleEngineChange}>
         {#each Object.keys(searchEngines) as engine}
           <option value={engine}>{searchEngines[engine].name}</option>
         {/each}

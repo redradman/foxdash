@@ -464,7 +464,7 @@
     content: '';
     position: absolute;
     top: -6px;
-    right: 20px;
+    right: 40px;
     width: 12px;
     height: 12px;
     background: var(--surface-color);
@@ -554,7 +554,7 @@
     content: '';
     position: absolute;
     top: -6px;
-    right: 20px;
+    right: 40px;
     width: 12px;
     height: 12px;
     background: var(--surface-color);
