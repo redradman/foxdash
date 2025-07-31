@@ -1,7 +1,7 @@
 <script>
   export let name;
-  export let size = 24;
-  export let color = 'currentColor';
+//   export let size = 24;
+//   export let color = 'currentColor';
 
   const icons = {
     settings: `

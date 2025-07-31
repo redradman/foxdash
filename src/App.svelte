@@ -359,7 +359,7 @@
     gap: 1rem;
   }
 
-  .edit-btn {
+  /* .edit-btn {
     display: flex;
     align-items: center;
     gap: 0.5rem;
@@ -368,7 +368,7 @@
     cursor: pointer;
     font-size: 1rem;
     color: var(--on-surface-color);
-  }
+  } */
 
   .settings-btn {
     background: none;
