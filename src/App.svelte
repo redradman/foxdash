@@ -128,14 +128,21 @@
     <DateTime />
   </div>
   <div class="top-right">
+    {#if editMode}
+      <button class="done-btn" on:click={toggleEditMode}>
+        Done
+      </button>
+    {/if}
     <button class="settings-btn" on:click={() => showMenu = !showMenu} bind:this={buttonElement}>
       <Icon name="settings" size={24} />
     </button>
     {#if showMenu}
       <div class="settings-menu" transition:fly={{ y: -5, duration: 200 }} bind:this={menuElement}>
-        <button on:click={toggleEditMode}>
-          {editMode ? 'Done' : 'Change Bookmarks'}
-        </button>
+        {#if !editMode}
+          <button on:click={toggleEditMode}>
+            Change Bookmarks
+          </button>
+        {/if}
         <button on:click={toggleThemeMenu} class="theme-toggle">
           <span>Appearance</span>
           <span class="theme-preview" style="background-color: {themes[currentTheme].colors['--primary-color']}"></span>
@@ -211,6 +218,9 @@
     align-self: start;
     padding: 2rem;
     position: relative;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
   }
 
   .edit-btn {
@@ -242,6 +252,32 @@
     background-color: rgba(255, 255, 255, 0.1);
     opacity: 1;
     transform: scale(1.05);
+  }
+
+  .done-btn {
+    background: linear-gradient(135deg, var(--primary-color) 0%, rgba(79, 79, 79, 0.8) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: var(--on-primary-color);
+    padding: 0.75rem 1.5rem;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+
+  .done-btn:hover {
+    background: linear-gradient(135deg, var(--primary-color) 0%, rgba(79, 79, 79, 0.9) 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+  }
+
+  .done-btn:active {
+    transform: translateY(0);
+    transition: transform 0.1s ease;
   }
 
   .settings-menu {
